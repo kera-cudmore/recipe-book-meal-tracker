@@ -22,6 +22,11 @@
 
   {% include 'includes/header.html' %}
   
-  <h1>Kera's Recipe Book & Meal Planner</h1>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  
+  {% include 'includes/footer.html' %}
 </body>
 </html>
