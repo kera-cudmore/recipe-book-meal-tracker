@@ -1,2 +1,5 @@
-# recipe-book-meal-tracker
-Recipe Book and Meal Tracker created with Django
+![Banner](documentation/banner.png)
+
+# Recipe Book and Meal Planner
+
+Recipe Book and Meal Planner website created with Django.
