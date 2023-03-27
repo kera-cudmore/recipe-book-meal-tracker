@@ -9,12 +9,12 @@
   <div class="container d-flex flex-row flex-wrap justify-content-center">
 
     {% for recipe in recipes %}
-      <a class="recipes" href="" aria-label="Click to view {{recipe.title}}">
+      <a class="recipes" href="{% url 'recipe_detail' recipe.id %}" aria-label="Click to view {{recipe.title}}">
         <div class="card m-3" style="width: 18rem;">
           <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" class="card-img-top">
           <div class="card-body">
-            <h2 class="card-title">{{recipe.title}}</h2>
-            <p class="card-text">{{recipe.description|truncatechars:100}}</p>
+            <h2 class="card-title">{{ recipe.title }}</h2>
+            <p class="card-text">{{ recipe.description|truncatechars:100 }}</p>
           </div>
         </div>
       </a>
