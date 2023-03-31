@@ -6,13 +6,16 @@ from .forms import ProfileForm
 
 
 class Profiles(TemplateView):
-    """User Profile View"""
+    """
+    User Profile View
+    """
     template_name = "profiles/profile.html"
 
     def get_context_data(self, **kwargs):
         profile = Profile.objects.get(user=self.kwargs["pk"])
         context = {
-            'profile': profile
+            'profile': profile,
+            'form': ProfileForm(instance=profile),
         }
 
         return context
@@ -24,8 +27,8 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Profile
 
     def form_valid(self, form):
-        self.success_url = f'/profile/view/{self.kwargs["pk"]}'
+        self.success_url = f'/profiles/user/{self.kwargs["pk"]}'
         return super().form_valid(form)
 
     def test_func(self):
-        return self.request.urser == self.get_object().user
+        return self.request.user == self.get_object().user
