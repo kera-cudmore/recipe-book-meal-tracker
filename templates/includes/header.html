@@ -25,16 +25,19 @@
             </li>
 
             {% if request.user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif  %}" href="/accounts/logout/">Log Out</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif  %}" href="/accounts/logout/">Log Out</a>
+              </li>  
             {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts/signup' %}active{% endif  %}" href="/accounts/signup/">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url_name == 'accounts/login' %}active{% endif  %}" href="/accounts/login/">Log In</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'accounts/signup' %}active{% endif  %}" href="/accounts/signup/">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'accounts/login' %}active{% endif  %}" href="/accounts/login/">Log In</a>
+              </li>
             {% endif %}
           </ul>
 
