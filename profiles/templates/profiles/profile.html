@@ -23,8 +23,13 @@
         {% endif %}
 
         {% if request.user == profile.user %}
+        <div>  
           <button id="myBtn" class="btn btn-primary w-25 mb-4">Edit</button>
-        {% endif %}
+        </div>
+        <div>
+          <a href="{% url 'meal_planner' %}" class="btn btn-primary w-25 mb-4">Meals</a>
+        </div>
+          {% endif %}
         </div>
       <div class="profile-recipes">
         <h2 class="text-center pb-4">Latest Recipes</h2>
